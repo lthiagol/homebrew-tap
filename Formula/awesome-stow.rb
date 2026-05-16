@@ -13,6 +13,6 @@ class AwesomeStow < Formula
   end
 
   test do
-    system "#{bin}/awesome-stow", "--help"
+    system bin/"awesome-stow", "--help"
   end
 end
