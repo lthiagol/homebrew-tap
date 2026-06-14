@@ -1,20 +1,43 @@
-# awesome-stow
+# lthiagol/tap
 
-Homebrew tap for [awesome-stow](https://github.com/lthiagol/awesome-stow) — a TUI wrapper for GNU Stow.
+Homebrew tap for [lthiagol](https://github.com/lthiagol)'s public projects.
 
 ## Install
 
 ```bash
-brew install lthiagol/awesome-stow/awesome-stow
+brew tap lthiagol/tap
 ```
 
-## Requirements
+## Available formulae
 
-- [GNU Stow](https://www.gnu.org/software/stow/) (installed automatically as a dependency)
-- Rust (installed automatically as a build dependency)
+| Formula | Description | Language | Repo |
+|---------|-------------|----------|------|
+| `awesome-stow` | TUI wrapper for GNU Stow — manage dotfiles interactively | Rust | [lthiagol/awesome-stow](https://github.com/lthiagol/awesome-stow) |
+| `lazybrew` | TUI for lazy management of Homebrew | Go | [lthiagol/lazybrew](https://github.com/lthiagol/lazybrew) |
+| `obsidian-terminal` | Read-only TUI for browsing Obsidian vaults | Go | [lthiagol/obsidian-terminal](https://github.com/lthiagol/obsidian-terminal) |
 
-## Update
+## Installing a formula
 
 ```bash
-brew upgrade lthiagol/awesome-stow/awesome-stow
+brew install lthiagol/tap/<formula>
 ```
+
+For example:
+
+```bash
+brew install lthiagol/tap/awesome-stow
+```
+
+## Updating
+
+```bash
+brew update && brew upgrade lthiagol/tap/<formula>
+```
+
+## Project docs
+
+See the `projects/` directory for per-project notes and documentation.
+
+## License
+
+Each formula is licensed under the same license as its source project.
