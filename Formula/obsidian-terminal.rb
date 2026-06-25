@@ -1,8 +1,8 @@
 class ObsidianTerminal < Formula
   desc "Read-only TUI for browsing Obsidian vaults"
   homepage "https://github.com/lthiagol/obsidian-terminal"
-  url "https://github.com/lthiagol/obsidian-terminal/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "d79e8999dcf16c8e2390a338f7df8f174c74e313df54137a0a192851611879d7"
+  url "https://github.com/lthiagol/obsidian-terminal/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "f750493a734f08a7396571a696266221c15e8b0557c6c249ea7cc04ecd2b8662"
   license "MIT"
 
   depends_on "go" => :build

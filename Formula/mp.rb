@@ -1,5 +1,5 @@
 class Mp < Formula
-  desc "Spec-driven project planning CLI for agents — structured for agents, readable for humans"
+  desc "Spec-driven project planning CLI — structured for agents, readable for humans"
   homepage "https://gitea.casa.luizthiago.info/thiago/master-plan"
   url "https://gitea.casa.luizthiago.info/thiago/master-plan.git",
       tag:      "v1.1.1",
