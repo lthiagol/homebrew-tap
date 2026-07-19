@@ -14,6 +14,7 @@ brew tap lthiagol/tap
 |---------|-------------|----------|------|
 | `awesome-stow` | TUI wrapper for GNU Stow — manage dotfiles interactively | Rust | [lthiagol/awesome-stow](https://github.com/lthiagol/awesome-stow) |
 | `lazybrew` | TUI for lazy management of Homebrew | Go | [lthiagol/lazybrew](https://github.com/lthiagol/lazybrew) |
+| `lazybrew-dev` | Rolling development build of lazybrew (tracks `wip` branch) | Go | [lthiagol/lazybrew](https://github.com/lthiagol/lazybrew) |
 | `obsidian-terminal` | Read-only TUI for browsing Obsidian vaults | Go | [lthiagol/obsidian-terminal](https://github.com/lthiagol/obsidian-terminal) |
 | `mp` | Spec-driven project planning CLI for agents | Rust | [thiago/master-plan](https://gitea.casa.luizthiago.info/thiago/master-plan) |
 
