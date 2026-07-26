@@ -8,17 +8,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  audit:
-    name: brew audit + style
+  ci:
+    name: lint formulas
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Homebrew
-        run: brew update
+      - name: Ruby syntax check
+        # Matches the original Codeberg Woodpecker pipeline.
+        # Catches Ruby syntax errors in any formula before merge.
+        run: find Formula projects -type f -name '*.rb' -exec ruby -c {} +
 
-      - name: Audit formulas (strict)
-        run: brew audit --strict Formula/*.rb
-
-      - name: Style check formulas
+      - name: brew style
+        # `brew audit` no longer accepts file paths in modern Homebrew.
+        # `brew style` does, and catches the same whitespace/quoting issues.
         run: brew style Formula/*.rb
