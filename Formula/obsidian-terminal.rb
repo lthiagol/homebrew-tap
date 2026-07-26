@@ -1,6 +1,6 @@
 class ObsidianTerminal < Formula
   desc "Read-only TUI for browsing Obsidian vaults"
-  homepage "https://codeberg.org/lthiagol/obsidian-terminal"
+  homepage "https://github.com/lthiagol/obsidian-terminal"
   url "https://github.com/lthiagol/obsidian-terminal/archive/refs/tags/v1.0.0-rc1.tar.gz"
   sha256 "46d2ad9cc631a41658cb5bb850453ddc55c40e72821712495be3d9d0eca12fef"
   license "MIT"
