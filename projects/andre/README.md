@@ -2,7 +2,7 @@
 
 TUI wrapper for GNU Stow — manage your dotfiles interactively.
 
-- Homepage: https://codeberg.org/lthiagol/andre
+- Homepage: https://github.com/lthiagol/andre
 - Tap formula: `lthiagol/tap/andre`
 
 ## Requirements

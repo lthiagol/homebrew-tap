@@ -1,6 +1,6 @@
 # lazybrew-dev
 
-Rolling development build of [lazybrew](https://codeberg.org/lthiagol/lazybrew), tracking the `wip` branch.
+Rolling development build of [lazybrew](https://github.com/lthiagol/lazybrew), tracking the `wip` branch.
 
 - **Tap formula:** `lthiagol/tap/lazybrew-dev`
 - **Tracks:** `wip` branch (manual updates)
@@ -48,7 +48,7 @@ This formula is **manually bumped**. To roll forward to a newer `wip` commit:
 
    ```bash
    curl -sL -o /tmp/lazybrew-wip.tar.gz \
-     "https://codeberg.org/lthiagol/lazybrew/archive/${SHA}.tar.gz"
+     "https://github.com/lthiagol/lazybrew/archive/${SHA}.tar.gz"
    shasum -a 256 /tmp/lazybrew-wip.tar.gz
    ```
 
@@ -78,4 +78,4 @@ This formula is **manually bumped**. To roll forward to a newer `wip` commit:
 ## See also
 
 - [`lazybrew`](../lazybrew/) — the stable formula.
-- [Main repo](https://codeberg.org/lthiagol/lazybrew) — source, issues, design docs.
+- [Main repo](https://github.com/lthiagol/lazybrew) — source, issues, design docs.

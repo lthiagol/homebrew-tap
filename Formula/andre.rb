@@ -1,6 +1,6 @@
 class Andre < Formula
   desc "TUI wrapper for GNU Stow — manage dotfiles interactively"
-  homepage "https://codeberg.org/lthiagol/andre"
+  homepage "https://github.com/lthiagol/andre"
   url "https://codeberg.org/lthiagol/andre/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "c87881f7fcccce953a895cb34ebbb05cfd4d4f4a51d7678c4bba98c752e6e6ab"
   license "MIT"
