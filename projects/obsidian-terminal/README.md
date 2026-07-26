@@ -2,7 +2,7 @@
 
 Read-only TUI for browsing Obsidian vaults.
 
-- Homepage: https://codeberg.org/lthiagol/obsidian-terminal
+- Homepage: https://github.com/lthiagol/obsidian-terminal
 - Tap formula: `lthiagol/tap/obsidian-terminal`
 
 ## Usage
@@ -12,4 +12,4 @@ brew install lthiagol/tap/obsidian-terminal
 brew upgrade lthiagol/tap/obsidian-terminal
 ```
 
-See the [main repo](https://codeberg.org/lthiagol/obsidian-terminal) for full documentation and keybindings.
+See the [main repo](https://github.com/lthiagol/obsidian-terminal) for full documentation and keybindings.

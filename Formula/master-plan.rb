@@ -1,8 +1,8 @@
 class MasterPlan < Formula
   desc "Spec-driven project planning CLI — structured for agents, readable for humans"
-  homepage "https://codeberg.org/lthiagol/master-plan"
+  homepage "https://github.com/lthiagol/master-plan"
   url "https://codeberg.org/lthiagol/master-plan/archive/refs/tags/v1.0.0-rc.1.tar.gz"
-  version "1.0.0-rc.1"
+  version "1.0.0-rc1"
   sha256 "4396d43a18ee8396c94c025d877facc2e639b1e26c0bc9be214bd9a3ee3e37d7"
   license "MIT"
 

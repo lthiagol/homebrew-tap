@@ -2,7 +2,7 @@
 
 Spec-driven project planning CLI — structured for agents, readable for humans.
 
-- Homepage: https://codeberg.org/lthiagol/master-plan
+- Homepage: https://github.com/lthiagol/master-plan
 - Tap formula: `lthiagol/tap/master-plan`
 - Installs: `mp` (agent CLI) + `raul` (human TUI)
 
@@ -26,5 +26,5 @@ raul --help
 - `wip` — day-to-day commits; tracked by the rolling `master-plan-dev`
   formula ([see project doc](../master-plan-dev/)).
 
-See the [main repo](https://codeberg.org/lthiagol/master-plan) for full
+See the [main repo](https://github.com/lthiagol/master-plan) for full
 documentation, the agent integration guide, and the planning methodology.

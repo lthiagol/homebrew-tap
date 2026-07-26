@@ -1,6 +1,6 @@
 # master-plan-dev
 
-Rolling development build of [master-plan](https://codeberg.org/lthiagol/master-plan), tracking the `wip` branch.
+Rolling development build of [master-plan](https://github.com/lthiagol/master-plan), tracking the `wip` branch.
 
 - **Tap formula:** `lthiagol/tap/master-plan-dev`
 - **Tracks:** `wip` branch (manual updates)
@@ -49,7 +49,7 @@ This formula is **manually bumped**. To roll forward to a newer `wip` commit:
 
    ```bash
    curl -sL -o /tmp/master-plan-wip.tar.gz \
-     "https://codeberg.org/lthiagol/master-plan/archive/${SHA}.tar.gz"
+     "https://github.com/lthiagol/master-plan/archive/${SHA}.tar.gz"
    shasum -a 256 /tmp/master-plan-wip.tar.gz
    ```
 
@@ -79,4 +79,4 @@ This formula is **manually bumped**. To roll forward to a newer `wip` commit:
 ## See also
 
 - [`master-plan`](../master-plan/) — the stable formula.
-- [Main repo](https://codeberg.org/lthiagol/master-plan) — source, issues, design docs.
+- [Main repo](https://github.com/lthiagol/master-plan) — source, issues, design docs.
