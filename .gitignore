@@ -1,0 +1,12 @@
+# mp CLI scratch + lock files (transient)
+.mp-scratch/
+.mp-project-write.lock
+
+# Session tooling (subagents) — never commit
+.pi-subagents/
+
+# Legacy CI config from Codeberg (replaced by .github/workflows/)
+.woodpecker/
+
+# OS noise
+.DS_Store

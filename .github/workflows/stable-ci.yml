@@ -1,0 +1,24 @@
+name: stable-ci
+
+on:
+  push:
+    branches: [stable]
+  pull_request:
+    branches: [stable]
+  workflow_dispatch:
+
+jobs:
+  audit:
+    name: brew audit + style
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        run: brew update
+
+      - name: Audit formulas (strict)
+        run: brew audit --strict Formula/*.rb
+
+      - name: Style check formulas
+        run: brew style Formula/*.rb
