@@ -1,18 +1,18 @@
 class MasterPlanDev < Formula
-  desc "Rolling development build of master-plan (mp + raul) — tracks the wip branch. Replaces master-plan; install only one at a time."
+  desc "Rolling dev build of master-plan; tracks the wip branch"
   homepage "https://github.com/lthiagol/master-plan"
   url "https://github.com/lthiagol/master-plan/archive/e2888ffa44c43cfc3675c324d676dba20bb56a71.tar.gz"
   version "1.0.0-rc1-dev.20260813"
   sha256 "ca211a6856d3fb1bc7731f0195d4fe2e0b73b949e37e14469b4cedca0af16112"
   license "MIT"
 
-  conflicts_with "master-plan", because: "both install mp and raul binaries"
-
   # This is a rolling formula tracking the `wip` branch.
   # To update: bump the commit SHA + tarball sha256 below, then commit.
   # See projects/master-plan-dev/README.md for the update procedure.
 
   depends_on "rust" => :build
+
+  conflicts_with "master-plan", because: "both install mp and raul"
 
   def install
     system "cargo", "install", "--locked", "--root", prefix, "--path", "crates/mp"
