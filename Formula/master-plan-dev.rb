@@ -1,10 +1,12 @@
 class MasterPlanDev < Formula
-  desc "Rolling development build of master-plan (mp + raul) — tracks the wip branch"
+  desc "Rolling development build of master-plan (mp + raul) — tracks the wip branch. Replaces master-plan; install only one at a time."
   homepage "https://github.com/lthiagol/master-plan"
   url "https://github.com/lthiagol/master-plan/archive/e2888ffa44c43cfc3675c324d676dba20bb56a71.tar.gz"
   version "1.0.0-rc1-dev.20260813"
-  sha256 "9cc08929d77726072a46b547106c525baf2646ab2a1067da47edd25806ad88e4"
+  sha256 "ca211a6856d3fb1bc7731f0195d4fe2e0b73b949e37e14469b4cedca0af16112"
   license "MIT"
+
+  conflicts_with "master-plan", because: "both install mp and raul binaries"
 
   # This is a rolling formula tracking the `wip` branch.
   # To update: bump the commit SHA + tarball sha256 below, then commit.
@@ -15,15 +17,13 @@ class MasterPlanDev < Formula
   def install
     system "cargo", "install", "--locked", "--root", prefix, "--path", "crates/mp"
     system "cargo", "install", "--locked", "--root", prefix, "--path", "crates/raul"
-    # Rename binaries so the dev build coexists with `mp` / `raul` from the
-    # `master-plan` formula. Both formulae install to the same keg prefix;
-    # the renamed bins keep the tap installable side-by-side.
-    mv bin/"mp", bin/"mp-dev"
-    mv bin/"raul", bin/"raul-dev"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/mp-dev --help")
-    assert_match version.to_s, shell_output("#{bin}/raul-dev --help")
+    # Dev cut: binary's version is the workspace version (1.0.0-rc1), not
+    # the formula's `1.0.0-rc1-dev.20260813` — they intentionally differ.
+    # Assert the binary runs and prints the master-plan header.
+    assert_match "Master Plan CLI", shell_output("#{bin}/mp --help")
+    assert_match "raul", shell_output("#{bin}/raul --help")
   end
 end
