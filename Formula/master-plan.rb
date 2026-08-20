@@ -1,9 +1,9 @@
 class MasterPlan < Formula
   desc "Spec-driven project planning CLI — structured for agents, readable for humans"
   homepage "https://github.com/lthiagol/master-plan"
-  url "https://github.com/lthiagol/master-plan/archive/refs/tags/v1.0.0-rc1.tar.gz"
+  url "https://github.com/lthiagol/master-plan/archive/refs/tags/v1.0.0-rc2.tar.gz"
   version "1.0.0-rc1"
-  sha256 "9cc08929d77726072a46b547106c525baf2646ab2a1067da47edd25806ad88e4"
+  sha256 "1451cdfec6a784070d334c6e5eeb30dd3bbb3fa75d8515080b8e2a7ee25eb25d"
   license "MIT"
 
   depends_on "rust" => :build
