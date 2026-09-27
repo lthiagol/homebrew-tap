@@ -1,9 +1,9 @@
 class MasterPlanDev < Formula
   desc "Rolling dev build of master-plan; tracks the wip branch"
   homepage "https://github.com/lthiagol/master-plan"
-  url "https://github.com/lthiagol/master-plan/archive/05d16754e66903756a03386f1d7bcbe429b1ef5e.tar.gz"
-  version "1.0.0-rc3-dev.20260927-05d16754"
-  sha256 "268932c081ad366c76c7ff0479f7dab6e5702022c6fc1acbaed48a5bab474b2c"
+  url "https://github.com/lthiagol/master-plan/archive/2aedf7c5cf1e59bee450f0a86fd8712c5f49475b.tar.gz"
+  version "1.0.0-rc3-dev.20260927-2aedf7c5"
+  sha256 "8a7a2dc8817f68b665ec44b6830f031cd9ddc252de72e96093a05e4041bf8dd4"
   license "MIT"
 
   # This is a rolling formula tracking the `wip` branch.
