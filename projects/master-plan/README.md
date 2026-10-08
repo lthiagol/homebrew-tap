@@ -5,6 +5,10 @@ Spec-driven project planning CLI — structured for agents, readable for humans.
 - Homepage: https://github.com/lthiagol/master-plan
 - Tap formula: `lthiagol/tap/master-plan`
 - Installs: `mp` (agent CLI) + `raul` (human TUI)
+- Mutually exclusive with `lthiagol/tap/master-plan-dev` — both install `mp`
+  and `raul`, so Homebrew refuses to have both installed. Uninstall one before
+  installing the other (see the
+  [dev project doc](../master-plan-dev/#one-version-at-a-time)).
 
 ## Usage
 

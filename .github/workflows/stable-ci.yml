@@ -1,10 +1,15 @@
 name: stable-ci
 
+# The tap's default branch is `main` (renamed from `stable` under F-tap-2,
+# 2026-08-25). Every automation PR targets main — `--base main` in both
+# master-plan tap-update workflows. This job used to trigger on `stable`,
+# which no PR targets, so `ruby -c` and `brew style` gated nothing after the
+# rename. Both branches are listed so an older checkout still reports.
 on:
   push:
-    branches: [stable]
+    branches: [main, stable]
   pull_request:
-    branches: [stable]
+    branches: [main, stable]
   workflow_dispatch:
 
 jobs:
@@ -23,3 +28,35 @@ jobs:
         # `brew audit` no longer accepts file paths in modern Homebrew.
         # `brew style` does, and catches the same whitespace/quoting issues.
         run: brew style Formula/*.rb
+
+      - name: Verify each formula's sha256 matches its own url
+        # The failure this catches is silent and total: a formula whose sha256
+        # belongs to a *different* archive than the one its `url` names still
+        # passes `ruby -c` and `brew style`, and only fails at the user's
+        # `brew install` with "Formula reports different checksum", after the
+        # full download. Both tap-update workflows write two formulas pointing
+        # at two different archives (tag vs commit), so this has to hold for
+        # each one independently.
+        #
+        # Same logic as master-plan's scripts/check-tap-checksums.sh; the tap
+        # repo has no master-plan checkout to call it from, so it is inlined.
+        run: |
+          set -uo pipefail
+          status=0
+          for f in Formula/*.rb; do
+            url=$(ruby -e 'print File.read(ARGV[0])[/^\s*url "(.*)"/, 1].to_s' "$f")
+            [ -n "$url" ] || { echo "SKIP  $f (no url)"; continue; }
+            declared=$(ruby -e 'print File.read(ARGV[0])[/^\s*sha256 "([0-9a-f]{64})"/, 1].to_s' "$f")
+            if [ -z "$declared" ]; then echo "FAIL  $f (no sha256)"; status=1; continue; fi
+            actual=$(curl -sSfL --retry 3 --max-time 300 "$url" | shasum -a 256 | cut -d ' ' -f1)
+            if [ -z "$actual" ]; then echo "FAIL  $f (fetch failed: $url)"; status=1; continue; fi
+            if [ "$declared" = "$actual" ]; then
+              echo "OK    $f  $url"
+            else
+              echo "FAIL  $f  $url"
+              echo "        declared: $declared"
+              echo "        actual:   $actual"
+              status=1
+            fi
+          done
+          exit $status
