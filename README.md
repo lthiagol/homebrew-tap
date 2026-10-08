@@ -18,7 +18,7 @@ brew tap lthiagol/tap
 | `lazybrew` | TUI for lazy management of Homebrew | Go | [lthiagol/lazybrew](https://github.com/lthiagol/lazybrew) |
 | `lazybrew-dev` | Rolling development build of lazybrew (tracks `wip` branch) | Go | [lthiagol/lazybrew](https://github.com/lthiagol/lazybrew) |
 | `master-plan` | Spec-driven project planning CLI for agents (mp + raul) | Rust | [lthiagol/master-plan](https://github.com/lthiagol/master-plan) |
-| `master-plan-dev` | Rolling development build of master-plan (`mp-dev` + `raul-dev`, tracks `wip`) | Rust | [lthiagol/master-plan](https://github.com/lthiagol/master-plan) |
+| `master-plan-dev` | Rolling development build of master-plan (installs `mp` + `raul`, tracks `wip`; mutually exclusive with `master-plan`) | Rust | [lthiagol/master-plan](https://github.com/lthiagol/master-plan) |
 | `obsidian-terminal` | Read-only TUI for browsing Obsidian vaults | Go | [lthiagol/obsidian-terminal](https://github.com/lthiagol/obsidian-terminal) |
 
 ## Installing a formula
@@ -32,6 +32,11 @@ For example:
 ```bash
 brew install lthiagol/tap/andre
 ```
+
+`master-plan` and `master-plan-dev` both install binaries named `mp` and
+`raul`, so they are mutually exclusive: install one at a time. See
+[`projects/master-plan-dev/`](projects/master-plan-dev/) for the switch
+procedure.
 
 ## Updating
 
