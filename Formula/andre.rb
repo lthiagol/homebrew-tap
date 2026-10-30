@@ -1,12 +1,14 @@
 class Andre < Formula
-  desc "TUI wrapper for GNU Stow — manage dotfiles interactively"
+  desc "Terminal UI for dotfiles management (GNU Stow model)"
   homepage "https://github.com/lthiagol/andre"
-  url "https://codeberg.org/lthiagol/andre/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "c87881f7fcccce953a895cb34ebbb05cfd4d4f4a51d7678c4bba98c752e6e6ab"
+  url "https://github.com/lthiagol/andre/archive/refs/tags/v1.0.0-rc1.tar.gz"
+  sha256 "fdd6fea7237b506b0a50429aed452e96a5d8065fca529dc6829d7e71a705a3a0"
   license "MIT"
 
   depends_on "rust" => :build
-  depends_on "stow"
+
+  # GNU Stow is optional: the default native engine needs no external
+  # binary. It is only required when global.engine is set to "stow".
 
   def install
     system "cargo", "install", "--locked", "--root", prefix, "--path", "andre"
