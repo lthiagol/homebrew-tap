@@ -2,7 +2,7 @@ class Andre < Formula
   desc "Terminal UI for dotfiles management (GNU Stow model)"
   homepage "https://github.com/lthiagol/andre"
   url "https://github.com/lthiagol/andre/archive/refs/tags/v1.0.0-rc1.tar.gz"
-  sha256 "d4bf55ab08bca3cefa27b1f24bd5b2bff610f5ec9e5362d9812a69dff7957171"
+  sha256 "fdc9126a3c1996c06e9e3b53ca586323a7fcf8b999e169afd5c93130f13c8ba7"
   license "MIT"
 
   depends_on "rust" => :build
