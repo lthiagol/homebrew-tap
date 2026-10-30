@@ -1,9 +1,9 @@
 class AndreDev < Formula
   desc "Terminal UI for dotfiles management (development build from wip branch)"
   homepage "https://github.com/lthiagol/andre"
-  url "https://github.com/lthiagol/andre/archive/c984ce68a733bbbfb5e213d8cb0ddbdf8f9a9c07.tar.gz"
+  url "https://github.com/lthiagol/andre/archive/1af9ac213ac36154ea35a363f09c3b662da573e7.tar.gz"
   version "1.0.0-rc1-dev.20261030"
-  sha256 "86c3c8af5a2c672a240899abc12f7b834e7e9c7616d78bb4a77fe5be39b995fc"
+  sha256 "9d538ba7d808a6573ba4f0a9c944cf220ca44ac253a3cc3b4ecc393775967322"
   license "MIT"
 
   # This is a rolling formula tracking the `wip` branch.
