@@ -14,12 +14,14 @@ brew trust lthiagol/tap
 
 ## Available formulae
 
-| Formula | Description | Language | Repo |
-|---------|-------------|----------|------|
-| `andre` | TUI wrapper for GNU Stow — manage dotfiles interactively | Rust | [lthiagol/andre](https://github.com/lthiagol/andre) |
-| `frond` | Read-only-first Obsidian-style terminal UI for markdown vaults | Rust | [lthiagol/Frond](https://github.com/lthiagol/Frond) |
-| `lazybrew` | TUI for lazy management of Homebrew | Go | [lthiagol/lazybrew](https://github.com/lthiagol/lazybrew) |
-| `lazybrew-dev` | Rolling development build of lazybrew (tracks `wip` branch) | Go | [lthiagol/lazybrew](https://github.com/lthiagol/lazybrew) |
+| Formula | Description | Repo |
+|---------|-------------|------|
+| `andre` | TUI wrapper for GNU Stow — manage dotfiles interactively | [andre](https://github.com/lthiagol/andre) |
+| `frond` | Read-only-first Obsidian-style terminal UI for markdown vaults | [Frond](https://github.com/lthiagol/Frond) |
+| `lazybrew` | TUI for lazy management of Homebrew | [lazybrew](https://github.com/lthiagol/lazybrew) |
+| `lazybrew-dev` | Rolling development build of lazybrew (tracks `wip` branch) | [lazybrew](https://github.com/lthiagol/lazybrew) |
+
+All repositories live under [lthiagol](https://github.com/lthiagol) on GitHub.
 
 ## Installing a formula
 
