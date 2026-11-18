@@ -1,8 +1,8 @@
 class Frond < Formula
   desc "Read-only-first Obsidian-style terminal UI for markdown vaults"
   homepage "https://github.com/lthiagol/Frond"
-  url "https://github.com/lthiagol/Frond/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "e0aa31537e2fd84362ffb5894257c9718b49fe576e306cc4f7e321604813403e"
+  url "https://github.com/lthiagol/Frond/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "cbcf52754b0c45e571d7e32e5843f1dbdb85acbb32d1c8dada7f81c337ea4dfc"
   license "MIT"
 
   depends_on "rust" => :build
