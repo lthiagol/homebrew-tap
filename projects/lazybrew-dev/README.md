@@ -29,43 +29,45 @@ Verify the install:
 lazybrew-dev --version
 ```
 
-You should see a version like `0.2.0-dev.<date>`, e.g. `0.2.0-dev.20260722`.
+You should see the tag it was built from, e.g. `lazybrew 1.1.0-rc1`.
 
 ## Update procedure (tap maintainer)
 
-This formula is **manually bumped**. To roll forward to a newer `wip` commit:
+This formula is **manually bumped**, to a tag cut from `wip`. To roll forward:
 
-1. From the `lazybrew` repo, pick the `wip` commit you want to ship (usually the tip):
+1. In the `lazybrew` repo, tag the `wip` commit you want to ship and push the tag:
 
    ```bash
-   cd /Users/thiago/Code/Pessoal/lazybrew
-   git checkout wip
-   git pull
-   SHA=$(git rev-parse HEAD)
+   cd ~/coding/lazybrew
+   git checkout wip && git pull
+   git tag -a vX.Y.Z-rcN -m "lazybrew vX.Y.Z-rcN"
+   git push origin vX.Y.Z-rcN
    ```
 
-2. Download the tarball for that SHA and compute its SHA256:
+2. Download the tag's tarball and compute its SHA256:
 
    ```bash
    curl -sL -o /tmp/lazybrew-wip.tar.gz \
-     "https://github.com/lthiagol/lazybrew/archive/${SHA}.tar.gz"
+     "https://github.com/lthiagol/lazybrew/archive/refs/tags/vX.Y.Z-rcN.tar.gz"
    shasum -a 256 /tmp/lazybrew-wip.tar.gz
    ```
 
-3. Edit `Formula/lazybrew-dev.rb` in this tap:
-   - Replace `url` with the new `${SHA}.tar.gz` URL.
-   - Replace `sha256` with the new hash.
-   - Bump `version` to the next dev date (or use `${SHA:0:7}` for a short-sha suffix).
+3. Edit `Formula/lazybrew-dev.rb` in this tap: replace the `url` tag and the
+   `sha256`. There is no `version` line: Homebrew reads it from the tag, and the
+   formula passes it to the binary with `-X main.version=#{version}`, so
+   `lazybrew-dev --version` prints it.
 
 4. Commit and push:
 
    ```bash
    git add Formula/lazybrew-dev.rb
-   git commit -m "lazybrew-dev: bump to ${SHA:0:7}"
+   git commit -m "lazybrew-dev: bump to vX.Y.Z-rcN"
    git push
    ```
 
-5. Validate locally with `brew install --build-from-source Formula/lazybrew-dev.rb` and `brew test lazybrew-dev`.
+5. Validate with `brew style Formula/lazybrew-dev.rb`, then
+   `brew upgrade lthiagol/tap/lazybrew-dev` (or install it) and
+   `lazybrew-dev --version`.
 
 ## Why a separate formula?
 

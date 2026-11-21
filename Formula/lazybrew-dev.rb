@@ -1,22 +1,21 @@
 class LazybrewDev < Formula
   desc "TUI for lazy management of Homebrew (development build from wip branch)"
   homepage "https://github.com/lthiagol/lazybrew"
-  url "https://codeberg.org/lthiagol/lazybrew/archive/15b6ad1f73497505edf2cf7deed2a49633700c3a.tar.gz"
-  version "0.2.0-dev.20260722"
-  sha256 "c118b42e9260b7f2f0213955b78308e0119e0a7ab2a1443e4265248c93d8120e"
+  url "https://github.com/lthiagol/lazybrew/archive/refs/tags/v1.1.0-rc1.tar.gz"
+  sha256 "d1d53744aed16b38dc16dea66171d6c5a7f0b64577e341df26c9e25c4f87a082"
   license "MIT"
 
-  # This is a rolling formula tracking the `wip` branch.
-  # To update: bump the commit SHA + tarball sha256 below, then commit.
+  # This is a rolling formula tracking the `wip` branch, pinned to a tag.
+  # To update: bump the tag in the url + tarball sha256 below, then commit.
   # See projects/lazybrew-dev/README.md for the update procedure.
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/lazybrew"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/lazybrew"
   end
 
   test do
-    assert_match "lazybrew", shell_output("#{bin}/lazybrew-dev --help")
+    assert_match version.to_s, shell_output("#{bin}/lazybrew-dev --version")
   end
 end
