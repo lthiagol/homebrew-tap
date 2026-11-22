@@ -1,8 +1,8 @@
 class LazybrewDev < Formula
   desc "TUI for lazy management of Homebrew (development build from wip branch)"
   homepage "https://github.com/lthiagol/lazybrew"
-  url "https://github.com/lthiagol/lazybrew/archive/refs/tags/v1.1.0-rc4.tar.gz"
-  sha256 "0866bab84f6a3042266842d9a980a80f9fe9a66a46462b80069b5e6b86b580ec"
+  url "https://github.com/lthiagol/lazybrew/archive/refs/tags/v1.1.0-rc5.tar.gz"
+  sha256 "b25f0603b8d32a69e8c06b40f3714e053307c59d3a516c13b88a9d5e8f6ed843"
   license "MIT"
 
   # This is a rolling formula tracking the `wip` branch, pinned to a tag.
