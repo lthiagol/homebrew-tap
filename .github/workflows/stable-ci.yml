@@ -29,6 +29,32 @@ jobs:
         # `brew style` does, and catches the same whitespace/quoting issues.
         run: brew style Formula/*.rb
 
+      - name: Verify each bottle block belongs to its formula's version
+        # scripts/bottle.sh publishes bottles to the release <formula>-<version>
+        # and writes that release as the bottle block's root_url. A bump that
+        # leaves the old block in place points brew at bottles for a version
+        # that was never built, and `brew install` fails instead of building
+        # from source. The bump must delete the block.
+        run: |
+          ruby -e '
+            status = 0
+            Dir["Formula/*.rb"].each do |f|
+              src = File.read(f)
+              next unless src =~ /^\s*bottle do$/
+              name = File.basename(f, ".rb")
+              version = src[/^\s*version "(.*)"/, 1] || src[/^\s*url ".*\/v?([^\/]+?)\.tar\.gz"/, 1]
+              root = src[/^\s*root_url "(.*)"/, 1]
+              want = "#{name}-#{version}"
+              if root&.end_with?("/#{want}")
+                puts "OK    #{f}  #{want}"
+              else
+                puts "FAIL  #{f}  bottle root_url #{root.inspect} is not for #{want}; delete the bottle block on a bump"
+                status = 1
+              end
+            end
+            exit status
+          '
+
       - name: Verify each formula's sha256 matches its own url
         # The failure this catches is silent and total: a formula whose sha256
         # belongs to a *different* archive than the one its `url` names still
