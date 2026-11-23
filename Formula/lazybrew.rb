@@ -1,8 +1,8 @@
 class Lazybrew < Formula
   desc "Lazy TUI for Homebrew"
   homepage "https://github.com/lthiagol/lazybrew"
-  url "https://github.com/lthiagol/lazybrew/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "1a6afd55c4b4ad666b8681c608368a975d29bdc26600fa9f133f318cee499e98"
+  url "https://github.com/lthiagol/lazybrew/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "b56f78817135df492747441a5738906b467df30b711bb3f1627ad9f96a2b6a63"
   license "MIT"
 
   depends_on "go" => :build
