@@ -15,6 +15,7 @@ brew install lthiagol/tap/<formula>
 | [andre](https://github.com/lthiagol/andre) | Dotfile managing TUI using stow |
 | [frond](https://github.com/lthiagol/Frond) | Terminal viewer for Obsidian based on leaf |
 | [lazybrew](https://github.com/lthiagol/lazybrew) | Lazy TUI for Homebrew |
+| [sapato](https://github.com/lthiagol/sapato) | Portable skill vault for coding agents |
 
 ## Update
 
