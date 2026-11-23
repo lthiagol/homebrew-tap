@@ -1,55 +1,27 @@
 # lthiagol/tap
 
-Homebrew tap for [lthiagol](https://github.com/lthiagol)'s public projects.
+Homebrew formulae for my projects.
 
 ## Install
 
-This tap is hosted on GitHub — the standard shorthand works. On Homebrew 7+,
-third-party taps must also be trusted before their formulae load:
-
 ```bash
 brew tap lthiagol/tap
-brew trust lthiagol/tap
-```
-
-## Available formulae
-
-| Formula | Description | Repo |
-|---------|-------------|------|
-| `andre` | TUI wrapper for GNU Stow — manage dotfiles interactively | [andre](https://github.com/lthiagol/andre) |
-| `frond` | Read-only-first Obsidian-style terminal UI for markdown vaults | [Frond](https://github.com/lthiagol/Frond) |
-| `lazybrew` | TUI for lazy management of Homebrew | [lazybrew](https://github.com/lthiagol/lazybrew) |
-
-Development builds (`lazybrew-dev`, `andre-dev`) live in
-[lthiagol/dev](https://github.com/lthiagol/homebrew-dev).
-
-All repositories live under [lthiagol](https://github.com/lthiagol) on GitHub.
-
-## Installing a formula
-
-```bash
+brew trust lthiagol/tap   # Homebrew 7+
 brew install lthiagol/tap/<formula>
 ```
 
-On Homebrew 7+ the tap must be trusted once first (see Install above):
-`brew trust lthiagol/tap`.
+| Formula | What |
+|---------|------|
+| [andre](https://github.com/lthiagol/andre) | Dotfile managing TUI using stow |
+| [frond](https://github.com/lthiagol/Frond) | Terminal viewer for Obsidian based on leaf |
+| [lazybrew](https://github.com/lthiagol/lazybrew) | Lazy TUI for Homebrew |
 
-For example:
-
-```bash
-brew install lthiagol/tap/andre
-```
-
-## Updating
+## Update
 
 ```bash
 brew update && brew upgrade lthiagol/tap/<formula>
 ```
 
-## Project docs
+Development builds live in [lthiagol/dev](https://github.com/lthiagol/homebrew-dev).
 
-See the `projects/` directory for per-project notes and documentation.
-
-## License
-
-Each formula is licensed under the same license as its source project.
+Each formula follows its project's license.

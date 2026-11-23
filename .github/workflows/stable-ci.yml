@@ -22,7 +22,7 @@ jobs:
       - name: Ruby syntax check
         # Matches the original Codeberg Woodpecker pipeline.
         # Catches Ruby syntax errors in any formula before merge.
-        run: find Formula projects -type f -name '*.rb' -exec ruby -c {} +
+        run: find Formula -type f -name '*.rb' -exec ruby -c {} +
 
       - name: brew style
         # `brew audit` no longer accepts file paths in modern Homebrew.
