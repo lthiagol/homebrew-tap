@@ -19,7 +19,9 @@ brew trust lthiagol/tap
 | `andre` | TUI wrapper for GNU Stow — manage dotfiles interactively | [andre](https://github.com/lthiagol/andre) |
 | `frond` | Read-only-first Obsidian-style terminal UI for markdown vaults | [Frond](https://github.com/lthiagol/Frond) |
 | `lazybrew` | TUI for lazy management of Homebrew | [lazybrew](https://github.com/lthiagol/lazybrew) |
-| `lazybrew-dev` | Rolling development build of lazybrew (tracks `wip` branch) | [lazybrew](https://github.com/lthiagol/lazybrew) |
+
+Development builds (`lazybrew-dev`, `andre-dev`) live in
+[lthiagol/dev](https://github.com/lthiagol/homebrew-dev).
 
 All repositories live under [lthiagol](https://github.com/lthiagol) on GitHub.
 
