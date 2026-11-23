@@ -209,7 +209,13 @@ cmd_check() {
   brew info --json=v2 "${full}" | jq -e --arg t "${here}" '.formulae[0].bottle.stable.files[$t]' >/dev/null ||
     die "brew's ${name} has no ${here} bottle; merge, commit, push and 'brew update' first"
 
-  brew reinstall "${full}"
+  # Not reinstall: it repeats the install's options, and a keg left by build
+  # was installed with --build-bottle, so brew would build from source again.
+  if brew list --formula "${full}" >/dev/null 2>&1
+  then
+    brew uninstall "${full}"
+  fi
+  brew install "${full}"
   poured=$(brew info --json=v2 "${full}" | jq -r '.formulae[0].installed[0].poured_from_bottle')
   [[ "${poured}" == "true" ]] || die "${name} was built from source, not poured from the ${here} bottle"
   brew test "${full}" || die "${name} was poured from the ${here} bottle but 'brew test' failed"
