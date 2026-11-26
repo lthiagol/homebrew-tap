@@ -17,6 +17,7 @@ brew install lthiagol/tap/<formula>
 | [lazybrew](https://github.com/lthiagol/lazybrew) | Lazy TUI for Homebrew |
 | [lazymoshi](https://github.com/lthiagol/lazymoshi) | Lazy TUI for moshi-hook |
 | [sapato](https://github.com/lthiagol/sapato) | Portable skill vault for coding agents |
+| [tartui](https://github.com/lthiagol/tartui) | Terminal UI for local Tart VMs |
 
 ## Update
 
