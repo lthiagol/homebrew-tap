@@ -5,6 +5,12 @@ class Frond < Formula
   sha256 "9b4136c66e84f155f03c8da40791dbc92181064a412d8bdf99541ea06853a856"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/lthiagol/homebrew-tap/releases/download/frond-0.7.0"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux: "50a9ede5224aef7b6c4a70888dccb855d44516aabaf3259f53152b47e3ac13ac"
+  end
+
   depends_on "rust" => :build
 
   def install
